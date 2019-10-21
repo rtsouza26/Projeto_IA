@@ -44,11 +44,9 @@ def accuracy(y_true, y_pred):
     acertos=0
     for x in range(0,len(y_true)):
         if y_true[x] == y_pred[x]:
-            acertos +=1
+            acertos += 1
 
     porcentagem = acertos/len(y_true)
-    print(acertos)
-    print(len(y_true))
     return porcentagem
 
 
@@ -125,11 +123,14 @@ data_test = array_convertido[indices_test]
 label_train = labels[indices_train]
 label_test = labels[indices_test]
 
-model = knn(k=5)
-model.train(data_train, label_train)
-
-y_pred = model.predict(data_test)
-print(accuracy(label_test, y_pred))
+k_vals = [1,3,5,10]
+acc_vals = []
+for val in k_vals:
+  obj = knn(k=val)
+  obj.train(data_train, label_train)
+  pred = obj.predict(data_test)
+  acc_vals.append(accuracy(label_test, pred))
+print(acc_vals)
 
 
 
