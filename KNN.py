@@ -89,7 +89,7 @@ class knn():
 
 iris = datasets.load_iris()
 indices = np.random.permutation(len(iris.data))
-
+#print(iris.data)
 indices_train = indices[:-50]
 indices_test = indices[-50:]
 

@@ -93,7 +93,7 @@ def separar_label(matriz):
     return vetor_label
     #raise NotImplementedError()
 
-
+'''
 arquivo = open('HCV-Egy-Data.csv')
 
 linhas = csv.reader(arquivo)
@@ -133,7 +133,7 @@ for val in k_vals:
 print(acc_vals)
 
 
-
+'''
 
 
 
